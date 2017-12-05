@@ -1,9 +1,9 @@
 /**
  * Created by li on 2017/12/5.
  */
-const path = require('path')
+//const path = require('path')
+//const fs = require('fs')
 const _ = require('lodash')
-const fs = require('fs')
 
 const all = {
     port:process.env.PORT || 9000
