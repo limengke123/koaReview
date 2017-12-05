@@ -1,0 +1,31 @@
+{
+  "name": "koaReview",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "set NODE_ENV=development && nodemon ./bin/index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/limengke123/koaReview.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/limengke123/koaReview/issues"
+  },
+  "homepage": "https://github.com/limengke123/koaReview#readme",
+  "dependencies": {
+    "koa": "^2.4.1",
+    "koa-bodyparser": "^4.2.0",
+    "koa-router": "^7.3.0",
+    "lodash": "^4.17.4",
+    "mongoose": "^4.13.6"
+  },
+  "devDependencies": {
+    "nodemon": "^1.12.4"
+  }
+}
