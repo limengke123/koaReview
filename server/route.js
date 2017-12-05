@@ -3,7 +3,7 @@
  */
 const Router = require('koa-router')()
 
-module.export = function(app){
+module.exports = function(app){
     Router.use("/hi",(ctx,next)=>{
         ctx.body = {
             status:true,

@@ -4,4 +4,4 @@ const app = new Koa()
 
 require("./route")(app)
 
-module.export = app
+module.exports = app

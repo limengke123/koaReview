@@ -8,8 +8,9 @@ const fs = require('fs')
 const all = {
     port:process.env.PORT || 9000
 }
+console.log(`./${process.env.NODE_ENV}.js`)
+console.log(`./${process.env.NODE_ENV.trim()}.js`)
+let config = _.merge(all,require(`./${process.env.NODE_ENV.trim()}`) || {})
 
-let config = _.merge(all,require(path.join("./",process.env.NODE_ENV,".js") || {}))
-
-module.export = config
+module.exports = config
 
