@@ -14,7 +14,7 @@ exports.dir = async (ctx,next)=>{
     const readDir = function (dir){
         fs.readdir(dir,(err,files)=>{
             files.forEach((filename,index,_arr)=>{
-                fs.fstat(filename,(err,stats)=>{
+                fs.fstat(path.join(dir,filename),(err,stats)=>{
                     if(stats.isDirectory()){
                         readDir(path.join(dir,filename))
                     } else {
