@@ -4,7 +4,7 @@
 const Router = require('koa-router')()
 
 module.exports = function(app){
-    Router.use("/hi",(ctx,next)=>{
+    Router.get("/hi",(ctx,next)=>{
         ctx.body = {
             status:true,
             data:"first time be here"
