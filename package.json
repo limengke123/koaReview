@@ -19,8 +19,13 @@
   },
   "homepage": "https://github.com/limengke123/koaReview#readme",
   "dependencies": {
+    "bunyan": "^1.8.12",
     "koa": "^2.4.1",
     "koa-bodyparser": "^4.2.0",
+    "koa-compress": "^2.0.0",
+    "koa-json": "^2.0.2",
+    "koa-logger": "^3.1.0",
+    "koa-response-time": "^2.0.0",
     "koa-router": "^7.3.0",
     "lodash": "^4.17.4",
     "mongoose": "^4.13.6"
