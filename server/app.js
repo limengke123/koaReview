@@ -11,5 +11,9 @@ app.use(async (ctx,next)=>{
 app.use(errorMiddle())
 require("./util/koa.js")(app)
 require("./route")(app)
-
+app.on('error',(err,ctx)=>{
+    if (process.env.NODE_ENV != 'test') {
+        console.error('error', err)
+    }
+})
 module.exports = app
