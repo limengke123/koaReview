@@ -5,8 +5,9 @@ const connectDatabase = require('../server/db/index')
     try{
         const info = await connectDatabase(config.mongo.uri)
         console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
+    } catch (err){
+        console.log(`unable to connect to database`)
     }
-    app.listen(config.port,()=>{
-        console.log('Koa server listening on %d, in %s mode', config.port, app.env)
-    })
+    await app.listen(config.port)
+    console.log('Koa server listening on %d, in %s mode', config.port, app.env)
 })
