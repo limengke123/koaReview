@@ -9,7 +9,7 @@ const connectDatabase = async (url)=>{
             .on("error",err=>reject(err))
             .on("close",()=>console.log("close"))
             .on("open",()=>resolve(mongoose.connections[0]))
-        mongoose.connect(url,{useMongoClient:true})
+            mongoose.connect(url,{useMongoClient:true})
     })
 }
 

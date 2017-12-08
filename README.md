@@ -11,4 +11,6 @@ npm run dev
 1. ./bin/index
 first start mongodb ,then app is listening on the port which set in cmd
 
-
+```apple js
+// i m got lost
+```

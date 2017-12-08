@@ -12,7 +12,7 @@ app.use(errorMiddle())
 require("./config/koa.js")(app)
 require("./route")(app)
 app.on('error',(err,ctx)=>{
-    if (process.env.NODE_ENV != 'test') {
+    if (process.env.NODE_ENV !== 'test') {
         console.error('error', err)
     }
 })

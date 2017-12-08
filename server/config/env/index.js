@@ -15,6 +15,6 @@ const all = {
 }
 
 let config = _.merge(all,require(`./${process.env.NODE_ENV.trim()}`) || {})
-
+// console.dir(config)
 module.exports = config
 
