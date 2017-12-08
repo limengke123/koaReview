@@ -2,8 +2,7 @@
  * Created by li on 2017/12/7.
  */
 const mongoose = require("mongoose")
-
-const connectDatabase = async (url)=>{
+const connectDatabase = (url)=>{
     return new Promise((resolve,reject)=>{
         mongoose.connection
             .on("error",err=>reject(err))

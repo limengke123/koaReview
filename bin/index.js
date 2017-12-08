@@ -1,14 +1,20 @@
+process.env.NODE_ENV = 'development'
 const app = require('../server/app.js')
 const config = require('../server/config/env/index.js')
 const connectDatabase = require('../server/db/index')
-(async ()=>{
+const port = 9000
+const connect = async function(url){
+    const info = await connectDatabase(url)
+    console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
     try{
-        //const info = await connectDatabase(config.mongo.uri)
-        const info = await connectDatabase("mongodb://localhost/li-dev")
-        console.log(`Connected to ${info.host}:${info.port}/${info.name}`);
-    } catch (err){
-        console.log(`unable to connect to database`)
+        await app.listen(port)
+        console.log(`fk server is started on ${port}`)
+    }catch (err){
+        console.log(`app makes wrong ${err}`)
     }
-    await app.listen(config.port)
-    console.log('Koa server listening on %d, in %s mode', config.port, app.env)
-}).catch(err=>console.log(err))
+}
+
+connect(`mongodb://localhost/testdb1`)
+    .catch(err=>{
+        console.log(`fk server`);console.dir(err)
+    })

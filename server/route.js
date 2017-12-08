@@ -3,8 +3,10 @@
  */
 const Router = require('koa-router')()
 const dir = require('./api/dir')
+const article = require('./api/article')
 module.exports = function(app){
     Router.use('/dir',dir.routes(),dir.allowedMethods())
+    Router.use('/article',article.routes(),article.allowedMethods())
     Router.get("/hi",(ctx,next)=>{
         ctx.body = {
             status:true,
