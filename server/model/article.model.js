@@ -32,5 +32,5 @@ ArticleSchema
             createTime:this.createTime
         }
     })
-exports.CommentSchema = ArticleSchema
+//exports.CommentSchema = ArticleSchema
 module.exports = mongoose.model('article',ArticleSchema)
