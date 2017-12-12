@@ -5,10 +5,10 @@ const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
 const ArticleSchema = new Schema({
-    author_id:{
-        type:Schema.type.objectId,
-        ref:'User'
-    },
+    // author_id:{
+    //     type:Schema.type.objectId,
+    //     ref:'User'
+    // },
     title:{
         type:String,
         unique:true
@@ -33,4 +33,4 @@ ArticleSchema
         }
     })
 exports.CommentSchema = ArticleSchema
-module.exports = mongoose.model('Article',ArticleSchema)
+module.exports = mongoose.model('article',ArticleSchema)
