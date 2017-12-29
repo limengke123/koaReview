@@ -19,9 +19,9 @@ module.exports = (app)=>{
     app.use(koaViews(path.resolve(__dirname,'../../view'),{
         extension:'html'
     }))
-    app.use(koaStatic(
+    /*app.use(koaStatic(
         path.resolve(__dirname,staticPath)
-    ))
+    ))*/
     app.use(bodyParser())
     app.use(compress())
 }
