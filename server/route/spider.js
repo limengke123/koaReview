@@ -4,5 +4,6 @@
 const router = require('koa-router')()
 const controller = require('../contoller')
 const {spider} = controller
+router.get('/dytt',spider.dytt)
 router.get('/',spider.sp)
 module.exports = router

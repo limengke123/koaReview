@@ -5,26 +5,16 @@ const request = require('request-promise')
 const cheerio = require('cheerio')
 const iconv = require('iconv-lite')
 const decodeType = "gbk"
+const {GET}  = require('../index')
 
-const getHtml = async (uri,decodeType = "utf8") => {
-    const buffer = await request({uri,encoding:null})
-    const string = iconv.decode(buffer,decodeType)
-    return string
-}
 
-const get$ = async (htmlString) => {
+const get$ = async (url,decodeType="utf8") => {
+    const htmlString = await GET(url,decodeType)
     const $ = cheerio.load(htmlString)
     return $
 }
 
-const main = async (uri , decodeType) => {
-    const htmlString = await getHtml(uri,decodeType)
-    const $ = await get$(htmlString)
-
-}
 
 module.exports = {
-    getHtml,
     get$,
-    main
 }

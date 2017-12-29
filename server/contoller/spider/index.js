@@ -5,6 +5,11 @@ const sp = async (ctx, next) => {
     ctx.body = "spider"
 }
 
+const dytt = async (ctx,next) => {
+    ctx.body =  "dytt"
+}
+
 module.exports = {
-    sp
+    sp,
+    dytt
 }
