@@ -20,12 +20,16 @@ const dytt = async (ctx,next) => {
     }
 }
 
+/**
+ * 下载和显示图片的例子
+ * 后续批量下载做准备
+ * */
 const download = async (ctx,next) => {
+    const fs = require('fs')
+    const path = require('path')
     const buffer = await GET("http://dev.zwu.flyread.local/image/holiday/bgTmp_zwu.png",void 0,true)
-    console.log(buffer)
-    const picPath = require('path').resolve(__dirname,'../../../logs/img.jpeg')
-    console.log(picPath)
-    require('fs').writeFile(picPath,buffer,(e)=>{
+    const picPath = path.resolve(__dirname,'../../../logs/img.jpeg')
+    fs.writeFile(picPath,buffer,(e)=>{
         if(!e){
             ctx.body = "download is ok"
         }
@@ -36,6 +40,7 @@ const showPic = async (ctx, next) => {
     const fs = require('fs')
     const path = require('path')
     const picPath = path.resolve(__dirname,'../../../logs/img.jpeg')
+    //ctx.type = 'text/plain'
     ctx.type = 'image/jpeg'
     const rs = fs.createReadStream(picPath)
     ctx.body = rs
