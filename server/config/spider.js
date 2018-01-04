@@ -1,6 +1,6 @@
 module.exports = {
     dytt:{
-        uri:"http://dev.zwu.flyread.local/opac.php",
+        uri:"http://www.dytt8.net/",
         decodeType:"gbk"
     },
     
